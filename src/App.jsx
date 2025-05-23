@@ -1,9 +1,9 @@
 // UI Web pentru Valdeco SaaS - cu auto-login admin pentru dev
 
 import { useState, useEffect, useContext, createContext } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Card, CardContent } from '@/components/ui/card'
+import { Button } from './components/ui/button'
+import { Input } from './components/ui/input'
+import { Card, CardContent } from './components/ui/card'
 import { createClient } from '@supabase/supabase-js'
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 
@@ -148,5 +148,3 @@ export default function App() {
     </UserProvider>
   )
 }
-
-
