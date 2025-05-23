@@ -1,15 +1,15 @@
 // UI Web pentru Valdeco SaaS - cu auto-login admin pentru dev
 
 import { useState, useEffect, useContext, createContext } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Card, CardContent } from '@/components/ui/card'
 import { createClient } from '@supabase/supabase-js'
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 
 const supabase = createClient(
-  "https://iptulisluwyopmlxwvfh.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwdHVsaXNsdXd5b3BtbHh3dmZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU2MDc0NDksImV4cCI6MjA2MTE4MzQ0OX0.tQ6AehwrMCv-e08DY5LxVCEgWPDNy2YyMoJhBjmhR5U"
+  'https://iptulisluwyopmlxwvfh.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwdHVsaXNsdXd5b3BtbHh3dmZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU2MDc0NDksImV4cCI6MjA2MTE4MzQ0OX0.tQ6AehwrMCv-e08DY5LxVCEgWPDNy2YyMoJhBjmhR5U'
 )
 
 const UserContext = createContext()
@@ -25,10 +25,9 @@ function UserProvider({ children }) {
         setUser(user)
         setLoading(false)
       } else {
-        // Auto-login pentru admin (mod dev)
         const { error } = await supabase.auth.signInWithPassword({
-          email: "adriannegru1706@gmail.com",
-          password: "Dididada1"
+          email: 'adriannegru1706@gmail.com',
+          password: 'Dididada1'
         })
         const { data: { user: loggedInUser } } = await supabase.auth.getUser()
         setUser(loggedInUser)
@@ -149,4 +148,5 @@ export default function App() {
     </UserProvider>
   )
 }
+
 
