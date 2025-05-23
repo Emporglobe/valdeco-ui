@@ -5,7 +5,7 @@ import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { Card, CardContent } from './components/ui/card'
 import { createClient } from '@supabase/supabase-js'
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams, Navigate } from 'react-router-dom'
 
 const supabase = createClient(
   'https://iptulisluwyopmlxwvfh.supabase.co',
@@ -140,6 +140,7 @@ export default function App() {
     <UserProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/docs/:flowId" element={<FlowDocs />} />
