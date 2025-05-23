@@ -124,7 +124,7 @@ function FlowDocs() {
       <h1 className="text-xl font-bold mb-4">Documentație pentru {flowId}</h1>
       <p>Vezi instrucțiunile PDF mai jos:</p>
       <a
-        href={`https://flows.vade-coin.com/pdfs/${flowId}.pdf`}
+        href={`/pdfs/${flowId}.pdf`}
         target="_blank"
         rel="noopener noreferrer"
         className="text-blue-600 underline"
